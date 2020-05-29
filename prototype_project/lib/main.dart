@@ -16,7 +16,9 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome To Flutter'),
           ),
-        body: ButtonWidgetState(),
+        body: Column(
+          children: <Widget>[ButtonWidget(), SimonButton()],
+        ),
       ),
     );
   }
@@ -25,6 +27,11 @@ class MyApp extends StatelessWidget {
 class ButtonWidget extends StatefulWidget {
   @override 
   ButtonWidgetState createState() => ButtonWidgetState();
+}
+
+class SimonButton extends StatefulWidget {
+  @override 
+  SimonButtonState createState() => SimonButtonState();
 }
 
 
@@ -41,6 +48,26 @@ class ButtonWidgetState extends State<ButtonWidget> {
         });
       },
       child: Text('Sanjar Button'),
+    );
+  }
+}
+
+class SimonButtonState extends State<SimonButton> {
+  MaterialColor buttonColour = Colors.red;
+
+  @override 
+  Widget build(BuildContext context){
+    return FloatingActionButton(
+      backgroundColor: buttonColour,
+      onPressed: (){
+        setState(() {
+          if (buttonColour == Colors.red) {
+            buttonColour = Colors.green;
+          } else {
+            buttonColour = Colors.red;
+          };
+        });
+      },
     );
   }
 }

@@ -1,33 +1,44 @@
 import 'package:flutter/material.dart';
+import 'SearchButton.dart';
+import 'SearchPage.dart';
 
 
 void main() {
-  runApp(MyApp());
+  runApp(new MaterialApp(
+    home: new HomePage(),
+    routes: <String, WidgetBuilder> {
+      // Home page already defined as "/" route
+      "/SearchPage": (BuildContext context) => new SearchPage()
+    }
+  ));
 }
 
-class MyApp extends StatelessWidget {
+class HomePage extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    bool isButtonPressed = false;
-    return MaterialApp(
-      title: 'Welcome TO Flutter',
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Welcome To Flutter'),
-          ),
-        body: Column(
-          children: <Widget>[ButtonWidget(), SimonButton()],
-        ),
-      ),
-    );
+    return Scaffold(
+        appBar: new AppBar(title: new Text("Home"), backgroundColor: Colors.black),
+        body: new Container(
+          child: new Center(
+            child: new Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                SearchButton()
+              ],
+            ),
+          )
+        )
+      );
+    
   }
 }
 
-class ButtonWidget extends StatefulWidget {
-  @override 
-  ButtonWidgetState createState() => ButtonWidgetState();
-}
+
+
+
+
+// Simon Code below, should be put in a new separate file
 
 class SimonButton extends StatefulWidget {
   @override 
@@ -35,22 +46,6 @@ class SimonButton extends StatefulWidget {
 }
 
 
-class ButtonWidgetState extends State<ButtonWidget> {
-  bool isButtonPressed = false;
-
-  @override 
-  Widget build(BuildContext context){
-    return RaisedButton(
-      color: isButtonPressed ? Colors.blue[100] : Colors.blue[50],
-      onPressed: (){
-        setState(() {
-          isButtonPressed = true;
-        });
-      },
-      child: Text('Sanjar Button'),
-    );
-  }
-}
 
 class SimonButtonState extends State<SimonButton> {
   MaterialColor buttonColour = Colors.red;

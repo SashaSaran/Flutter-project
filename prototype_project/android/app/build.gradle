@@ -59,5 +59,7 @@ flutter {
 }
 
 dependencies {
+    classpath 'com.android.tools.build:gradle:5.4.1'
+    classpath 'com.google.gms:google-services:4.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }

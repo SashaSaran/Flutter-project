@@ -6,10 +6,7 @@ class SearchPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: new AppBar(
-          backgroundColor: Colors.black,
-          new TextField(
-            
-          )
+          backgroundColor: Colors.black
         ),
         body: new Container(
           child: new Center(

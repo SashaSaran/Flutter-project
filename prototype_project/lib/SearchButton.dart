@@ -20,7 +20,7 @@ class SearchButtonState extends State<SearchButton> {
         // setState(() {
         //   isButtonPressed = !isButtonPressed;
         // });
-        Navigator.of(context).pushNamed("/SearchPage");
+        Navigator.pushNamed(context,"/SearchPage");
       },
       child: Text(
         "Search"

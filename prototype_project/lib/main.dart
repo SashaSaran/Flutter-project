@@ -24,7 +24,8 @@ class HomePage extends StatelessWidget {
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SearchButton()
+                SearchButton(),
+                SimonButton()
               ],
             ),
           )

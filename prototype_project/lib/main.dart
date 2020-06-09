@@ -19,18 +19,17 @@ class HomePage extends StatelessWidget {
     bool isButtonPressed = false;
     return Scaffold(
       appBar: new AppBar(title: new Text("Home"), backgroundColor: Colors.black),
-        body: new Container(
-          child: new Center(
-            child: new Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                MapButton()
-              ],
-            ),
-          )
+      body: new Container(
+        child: new Center(
+          child: new Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              MapButton()
+            ],
+          ),
         )
-      );  
-    );
+      )
+    );  
   }
 }
 

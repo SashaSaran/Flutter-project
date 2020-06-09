@@ -10,18 +10,11 @@ import 'MapScreen.dart';
 
 void main() {
   runApp(new MaterialApp(
-<<<<<<< HEAD
     home: new HomePage(),
     routes: <String, WidgetBuilder> {
       // Home page already defined as "/" route
-      "/SearchPage": (BuildContext context) => new SearchPage()
+      
     }
-=======
-    home: HomePage(),
-    routes: <String, WidgetBuilder> {
-      "/Map": (BuildContext context) => new MapScreen()
-    },
->>>>>>> f2e7ec48e8e7ff8a3943cbd17a35d0e70912ade5
   ));
 }
 

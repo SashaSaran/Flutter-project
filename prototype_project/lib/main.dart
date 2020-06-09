@@ -24,8 +24,7 @@ class HomePage extends StatelessWidget {
             child: new Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
-                SearchButton(),
-                SimonButton()
+                SearchButton()
               ],
             ),
           )
@@ -37,36 +36,6 @@ class HomePage extends StatelessWidget {
 
 
 
-
-
-// Simon Code below, should be put in a new separate file
-
-class SimonButton extends StatefulWidget {
-  @override 
-  SimonButtonState createState() => SimonButtonState();
-}
-
-
-
-class SimonButtonState extends State<SimonButton> {
-  MaterialColor buttonColour = Colors.red;
-
-  @override 
-  Widget build(BuildContext context){
-    return FloatingActionButton(
-      backgroundColor: buttonColour,
-      onPressed: (){
-        setState(() {
-          if (buttonColour == Colors.red) {
-            buttonColour = Colors.green;
-          } else {
-            buttonColour = Colors.red;
-          };
-        });
-      },
-    );
-  }
-}
 
 
 

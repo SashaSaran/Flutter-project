@@ -9,6 +9,7 @@ class MapScreen extends StatefulWidget {
 
 class MapScreenState extends State<MapScreen> {
 
+  final Map<String, Marker> mapMarkers = {};
   static final CameraPosition initialLocation = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.476,
@@ -26,13 +27,30 @@ class MapScreenState extends State<MapScreen> {
         onMapCreated: (GoogleMapController controller) {
           mapCon = controller;
         },
+        markers: mapMarkers.values.toSet(),
       ),
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.green,
-        onPressed: (){
-          Navigator.pop(context);
-        }
+        onPressed: getCurrentLocation,
+        tooltip: "Find current location",
+        child: Icon(Icons.map)
       ),
     );
+  }
+
+  void getCurrentLocation() async {
+    var currLocation = await Location().getLocation();
+    this.setState(() {
+      mapMarkers.clear();
+      final currMarker = Marker(
+        markerId: MarkerId("currLoc"),
+        position: LatLng(currLocation.latitude, currLocation.longitude),
+        infoWindow: InfoWindow(
+          title: "You are here"
+        ),
+      );
+      mapMarkers["Current Location"] = currMarker;
+    });
+
   }
 }

@@ -50,6 +50,7 @@ class MapScreenState extends State<MapScreen> {
         ),
       );
       mapMarkers["Current Location"] = currMarker;
+      mapCon.moveCamera(CameraUpdate.newLatLng(LatLng(currLocation.latitude, currLocation.longitude)));
     });
 
   }
